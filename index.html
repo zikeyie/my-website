@@ -85,7 +85,7 @@
     .nav-logo .dot { color: var(--deep-pink); }
 
     .nav-links {
-      display: flex; gap: 32px; align-items: center;
+      display: flex; gap: 28px; align-items: center;
     }
     .nav-links a {
       font-family: 'DM Sans', sans-serif;
@@ -760,6 +760,81 @@
     }
 
     /* =====================================================
+       CAMPUS SECTION (New)
+    ===================================================== */
+    #campus { background: var(--cream); }
+
+    .campus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .campus-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 36px;
+      border: 1px solid rgba(208,18,87,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .campus-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(208,18,87,0.12);
+    }
+    .campus-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--pale-pink), var(--mid-pink));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+    .campus-card:hover::after { transform: scaleX(1); }
+
+    .campus-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: var(--pale-pink);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .campus-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .campus-org {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid-pink);
+      margin-bottom: 12px;
+    }
+    .campus-period {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .campus-desc {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* =====================================================
        RESEARCH SECTION
     ===================================================== */
     #research { background: var(--cream); }
@@ -861,9 +936,132 @@
     }
 
     /* =====================================================
+       PORTFOLIO SECTION (New)
+    ===================================================== */
+    #portfolio { background: var(--white); }
+
+    .portfolio-filter {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 40px;
+    }
+    .portfolio-filter-btn {
+      background: var(--cream);
+      border: 1px solid rgba(208,18,87,0.1);
+      color: var(--text-mid);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all .25s;
+    }
+    .portfolio-filter-btn.active,
+    .portfolio-filter-btn:hover {
+      background: var(--deep-pink);
+      color: var(--white);
+      border-color: var(--deep-pink);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .portfolio-card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform .3s, box-shadow .3s;
+      aspect-ratio: 4/3;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(208,18,87,0.15);
+    }
+    .portfolio-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+    .portfolio-card:hover img {
+      transform: scale(1.08);
+    }
+    .portfolio-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(33,24,19,0.85) 0%, transparent 60%);
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .portfolio-card:hover .portfolio-card-overlay {
+      opacity: 1;
+    }
+    .portfolio-card-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.5;
+    }
+    .portfolio-card-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      color: var(--light-pink);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0;
+      background: rgba(33,24,19,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 10000;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .lightbox img {
+      max-width: 85vw; max-height: 85vh;
+      border-radius: 16px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+    }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 28px;
+      background: rgba(255,255,255,0.15);
+      border: none; color: var(--white);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .25s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+    .lightbox-caption {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      font-family: 'Noto Serif SC', serif;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      max-width: 600px;
+    }
+
+    /* =====================================================
        AWARDS SECTION
     ===================================================== */
-    #awards { background: var(--white); }
+    #awards { background: var(--cream); }
 
     .awards-grid {
       display: grid;
@@ -872,7 +1070,7 @@
     }
 
     .award-card {
-      background: var(--cream);
+      background: var(--white);
       border-radius: 20px;
       padding: 28px 22px;
       border: 1px solid rgba(208,18,87,0.08);
@@ -882,7 +1080,7 @@
     .award-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 16px 40px rgba(208,18,87,0.12);
-      background: var(--white);
+      background: var(--cream);
     }
     .award-icon-wrap {
       width: 56px; height: 56px;
@@ -1012,7 +1210,9 @@
       .edu-grid { grid-template-columns: 1fr; }
       .research-grid { grid-template-columns: 1fr 1fr; }
       .research-featured { grid-column: span 2; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
       .awards-grid { grid-template-columns: 1fr 1fr; }
+      .campus-grid { grid-template-columns: 1fr; }
       .exp-timeline::before { left: 0; }
       .exp-item { grid-template-columns: 1fr; }
       .exp-date-col { text-align: left; padding-top: 0; padding-bottom: 8px; }
@@ -1025,6 +1225,7 @@
     @media (max-width: 600px) {
       .research-grid { grid-template-columns: 1fr; }
       .research-featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
       .awards-grid { grid-template-columns: 1fr 1fr; }
       .hero-stats { gap: 24px; flex-wrap: wrap; }
       .nav-links { display: none; }
@@ -1060,7 +1261,9 @@
       <li><a href="#about">关于我</a></li>
       <li><a href="#education">教育背景</a></li>
       <li><a href="#experience">实习经历</a></li>
+      <li><a href="#campus">校园工作</a></li>
       <li><a href="#research">科研项目</a></li>
+      <li><a href="#portfolio">作品集</a></li>
       <li><a href="#awards">荣誉奖项</a></li>
       <li><a href="#contact" class="nav-contact-btn">联系我</a></li>
     </ul>
@@ -1133,18 +1336,18 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
             查看经历
           </a>
-          <a href="#contact" class="btn-outline">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-            联系我
+          <a href="#portfolio" class="btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+            作品集
           </a>
         </div>
         <div class="hero-stats reveal" style="transition-delay:.5s;">
           <div class="stat-item">
-            <div class="stat-num">5+</div>
+            <div class="stat-num">8+</div>
             <div class="stat-label">段实习经历</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">7+</div>
+            <div class="stat-num">7</div>
             <div class="stat-label">科研项目参与</div>
           </div>
           <div class="stat-item">
@@ -1212,7 +1415,7 @@
         <div class="reveal">
           <div class="about-text">
             <p>我是<strong>张可盈</strong>，重庆大学新闻与传播专业在读研究生（2025-2028），本科毕业于河海大学广播电视学，以专业<strong>综合排名第2/54、前3%</strong>的成绩保研。中共党员。</p>
-            <p>在校期间，我热衷于将理论与实践结合——既有扎实的学术积累（7项科研项目参与，论文见刊国家级期刊《科技传播》），也有丰富的行业实战经验，先后在<strong>网易有道、德锐咨询、连界创新、上海瑞馨会展</strong>等公司完成多段实习。</p>
+            <p>在校期间，我热衷于将理论与实践结合——既有扎实的学术积累（7项科研项目参与，论文见刊国家级期刊《科技传播》），也有丰富的行业实战经验，先后在<strong>网易有道、德锐咨询、连界创新、上海瑞馨会展、熹觅文化、上海艺述事</strong>等公司完成多段实习。</p>
             <p>我尤其擅长<strong>整合营销策划、短视频内容创作与社媒运营</strong>。曾独立策划可口可乐旗下品牌、高顿集团、大悦城等品牌的整合营销方案，方案均被客户采纳。</p>
             <p>熟练使用AIGC工具辅助创作，相信好的内容是数据洞察与创意审美的完美结合。</p>
           </div>
@@ -1225,7 +1428,7 @@
             <span class="skill-chip">无人机 & 稳定器</span>
             <span class="skill-chip">豆包 / 即梦 AIGC</span>
             <span class="skill-chip">Python 数据分析</span>
-            <span class="skill-chip">计算机二级 MSOffice</span>
+            <span class="skill-chip">计算机二级 MS Office</span>
             <span class="skill-chip">英语 CET-6 520</span>
             <span class="skill-chip">新媒体运营</span>
             <span class="skill-chip">PRD 文档撰写</span>
@@ -1361,7 +1564,7 @@
       <div class="section-header reveal">
         <div class="section-label">Work Experience</div>
         <h2 class="section-title">实习<em>经历</em></h2>
-        <p class="section-desc">在多家头部公司和机构积累实战经验，深度参与内容创作与品牌传播全链路。</p>
+        <p class="section-desc">在多家公司和机构积累实战经验，深度参与内容创作与品牌传播全链路。</p>
       </div>
 
       <div class="exp-timeline">
@@ -1376,8 +1579,8 @@
             <div class="exp-company">上海瑞馨会展</div>
             <div class="exp-role">公关策划实习生</div>
             <div class="exp-bullets">
-              <div class="exp-bullet">为可口可乐旗下美汁源、Powerade撰写新品上市社媒内容，单篇平均浏览量超 1 万。</div>
-              <div class="exp-bullet">独立策划 MORRORART、高顿集团（周年庆+代言官宣+教育行业黄金时期）、大悦城（15周年庆）、雪菲力等品牌整合营销方案，涵盖品牌分析、竞品研究、KOL合作、预算分配与ROI预估，方案均被客户采纳并落地执行。</div>
+              <div class="exp-bullet">为可口可乐旗下美汁源、Powerade撰写新品上市社媒内容，结合营销活动、用户洞察与节日节点进行内容策略调整，单篇平均浏览量超 1 万。</div>
+              <div class="exp-bullet">独立策划高顿集团（周年庆+代言官宣+6至9月教育行业黄金时期）、大悦城商场（15周年庆）、MORROR ART（618）、雪菲力等品牌的整合营销方案，涵盖品牌与产品分析、竞品分析、目标用户分析、传播节奏设计、KOL合作建议、预算分配与ROI预估，方案均被客户采纳与执行。</div>
             </div>
             <div class="exp-tags">
               <span class="exp-tag">整合营销</span>
@@ -1399,15 +1602,15 @@
             <div class="exp-company">ERS-LINKS</div>
             <div class="exp-role">产品助理</div>
             <div class="exp-bullets">
-              <div class="exp-bullet">覆盖 20+ 用户访谈与产品体验，提炼核心痛点并输出 PRD 文档。</div>
+              <div class="exp-bullet">协助完成大学生线上求职资源产品的需求调研与文档撰写，覆盖 20+ 用户访谈与产品体验，提炼核心痛点并输出 PRD 文档。</div>
               <div class="exp-bullet">参与产品功能测试与用户体验优化，推动 2 项关键功能上线，用户任务完成率明显提升。</div>
-              <div class="exp-bullet">同步支持市场部、运营部制作产品介绍 PPT 与搭建产品内容体系。</div>
+              <div class="exp-bullet">同步支持市场部、运营部制作产品介绍 PPT 及搭建产品内容体系，内容获销售团队高频复用。</div>
             </div>
             <div class="exp-tags">
               <span class="exp-tag">用户访谈</span>
               <span class="exp-tag">PRD文档</span>
               <span class="exp-tag">产品测试</span>
-              <span class="exp-tag">用户增长</span>
+              <span class="exp-tag">用户体验</span>
             </div>
           </div>
         </div>
@@ -1422,8 +1625,8 @@
             <div class="exp-company">连界创新</div>
             <div class="exp-role">视频运营实习生</div>
             <div class="exp-bullets">
-              <div class="exp-bullet">单月独立完成 20+ 条科普推广及企业宣传短视频，适配抖音、视频号、B站等平台调性，单条视频全网平均播放量 8000+。</div>
-              <div class="exp-bullet">负责公司视频号日常运营（发布、评论、粉丝维护、数据分析），通过优化发布时间与封面标题，账号月均涨粉 1000+。</div>
+              <div class="exp-bullet">结合文案素材全网搜集视频素材，并熟练使用豆包、即梦等 AI 软件辅助生成需要的视频和图片素材，单月独立完成 20+ 条科普推广及企业宣传短视频，适配抖音、视频号、B站等不同平台调性，单条视频全网平均播放量达 8000+，高出团队平均水平 40%。</div>
+              <div class="exp-bullet">负责公司官方视频号账号的日常运营，包括视频发布、评论互动、粉丝维护及数据分析，通过追踪用户画像及观看行为数据，优化视频发布时间与封面标题设计，账号月均涨粉 1000+，粉丝活跃度提升 35%。</div>
             </div>
             <div class="exp-tags">
               <span class="exp-tag">短视频创作</span>
@@ -1444,15 +1647,37 @@
             <div class="exp-company">德锐咨询</div>
             <div class="exp-role">运营实习生</div>
             <div class="exp-bullets">
-              <div class="exp-bullet">抖音、视频号热点类视频单条均浏览量 1W+，公众号推文均阅读量 1000+。</div>
-              <div class="exp-bullet">契合风格开设 AI 漫解视频号账号，月涨粉 <strong>2W+</strong>。</div>
-              <div class="exp-bullet">每日对各平台数据进行系统梳理分析，形成日报，总结爆款选题方向，为内容创作提供数据支撑。</div>
+              <div class="exp-bullet">负责视频剪辑和图文推广，抖音、视频号热点类视频单条平均浏览量 1W+，企业宣传视频和常规视频单条平均浏览量 3000+，公众号推文平均阅读量 1000+。</div>
+              <div class="exp-bullet">契合世新风格开设 AI 漫解风格视频号账号，月涨粉 <strong>2W+</strong>。</div>
+              <div class="exp-bullet">每日对抖音、视频号、公众号等平台的数据进行系统性梳理与分析，形成日报并同步至团队共享文档，总结爆款视频选题方向，为后续内容创作提供数据支撑。</div>
             </div>
             <div class="exp-tags">
               <span class="exp-tag">内容创作</span>
               <span class="exp-tag">账号运营</span>
               <span class="exp-tag">数据归档</span>
               <span class="exp-tag">爆款策略</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 上海艺述事 -->
+        <div class="exp-item reveal" style="transition-delay:.18s;">
+          <div class="exp-date-col">
+            <div class="exp-date">2024.10<br>—<br>2025.01</div>
+          </div>
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <div class="exp-company">上海艺述事</div>
+            <div class="exp-role">运营实习生</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">运用大英图书馆、蓬皮杜中心IP，结合节日节气等，为下属艺术展馆策划特色线下活动，吸引并转化客流，维护私域社群、增强粉丝黏性。</div>
+              <div class="exp-bullet">负责南京市艺述事博物集公众号、小红书、抖音部分的新媒体运营工作，创新宣传形式，获抖音南京市游玩排行榜展馆展览类第二名。</div>
+            </div>
+            <div class="exp-tags">
+              <span class="exp-tag">活动策划</span>
+              <span class="exp-tag">新媒体运营</span>
+              <span class="exp-tag">IP运营</span>
+              <span class="exp-tag">私域社群</span>
             </div>
           </div>
         </div>
@@ -1475,6 +1700,28 @@
               <span class="exp-tag">小红书运营</span>
               <span class="exp-tag">社群维护</span>
               <span class="exp-tag">商业转化</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 熹觅文化创意 -->
+        <div class="exp-item reveal" style="transition-delay:.22s;">
+          <div class="exp-date-col">
+            <div class="exp-date">2023.11<br>—<br>2024.06</div>
+          </div>
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <div class="exp-company">熹觅文化创意有限公司</div>
+            <div class="exp-role">视频创作实习生</div>
+            <div class="exp-bullets">
+              <div class="exp-bullet">协助车企、家装、茶品等公司策划新媒体内容，负责新媒体平台短视频产品创意宣传线，开展策划管理、交流对接、流程对接等事项。</div>
+              <div class="exp-bullet">撰写万字短视频脚本与文案写作，负责 8 场线下产品拍摄，独立完成 60+ 视频剪辑，协助企业账号运营，单条视频平均浏览量破万。</div>
+            </div>
+            <div class="exp-tags">
+              <span class="exp-tag">短视频脚本</span>
+              <span class="exp-tag">视频剪辑</span>
+              <span class="exp-tag">内容策划</span>
+              <span class="exp-tag">线下拍摄</span>
             </div>
           </div>
         </div>
@@ -1522,6 +1769,63 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CAMPUS ========================= -->
+  <section id="campus">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Campus Work</div>
+        <h2 class="section-title">校园<em>工作</em></h2>
+        <p class="section-desc">在学生工作中锻炼组织力与领导力，用内容创作服务校园传播。</p>
+      </div>
+
+      <div class="campus-grid">
+        <!-- 院传媒中心 -->
+        <div class="campus-card reveal">
+          <div class="campus-icon">📝</div>
+          <div class="campus-role">原创部负责人</div>
+          <div class="campus-org">院传媒中心</div>
+          <div class="campus-period">2021.09 — 2025.06</div>
+          <div class="campus-desc">
+            发表原创性图文、视频、H5等推文内容；延续原创内容作为负责人开展大创项目，设置公众号+小红书+抖音新媒体矩阵，共拥有4段公众号运营经历。
+          </div>
+        </div>
+
+        <!-- 校级自管会 -->
+        <div class="campus-card reveal" style="transition-delay:.1s;">
+          <div class="campus-icon">🎯</div>
+          <div class="campus-role">副部长 / 班级文体委员</div>
+          <div class="campus-org">校级组织自管会 · 班级</div>
+          <div class="campus-period">2021.09 — 2025.06</div>
+          <div class="campus-desc">
+            负责组织开展4场校级运动会、歌手大赛等活动，每场参与人数破千；组织班级集体舞比赛、观影摄影茶话会等各类文体活动并获得校级奖项。
+          </div>
+        </div>
+
+        <!-- 竞赛项目经历 -->
+        <div class="campus-card reveal" style="transition-delay:.15s;">
+          <div class="campus-icon">🏆</div>
+          <div class="campus-role">核心成员 · 主创</div>
+          <div class="campus-org">学科竞赛 & 项目实践</div>
+          <div class="campus-period">2022 — 2024</div>
+          <div class="campus-desc">
+            全国大学生广告艺术大赛国二三等奖；中国大学生广告艺术节学院奖等级奖3项、优秀奖等8项；作为主创或核心成员参与营销创客、广播音频、微电影、短视频、TVC广告、H5等创意作品创作。
+          </div>
+        </div>
+
+        <!-- 商家合作 & 直播运营 -->
+        <div class="campus-card reveal" style="transition-delay:.2s;">
+          <div class="campus-icon">📡</div>
+          <div class="campus-role">自媒体运营 & 商家合作</div>
+          <div class="campus-org">营销创客竞赛 & 实践项目</div>
+          <div class="campus-period">2022 — 2024</div>
+          <div class="campus-desc">
+            运用自媒体账号参与商家广告制作与投放，在抖音、B站、小红书投放广告作品，为银鹭、榄菊、卫龙等商家进行视频创作；单条视频平均突破1.5万+浏览量；累计直播100+小时，获得10W+曝光，共涨粉5000+人。
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1607,6 +1911,164 @@
       </div>
     </div>
   </section>
+
+  <!-- ========================= PORTFOLIO ========================= -->
+  <section id="portfolio">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">作品<em>集</em></h2>
+        <p class="section-desc">用镜头记录世界，用创意讲述故事，用AI拓展想象的边界。</p>
+      </div>
+
+      <div class="portfolio-filter reveal" style="transition-delay:.1s;">
+        <button class="portfolio-filter-btn active" data-filter="all">全部作品</button>
+        <button class="portfolio-filter-btn" data-filter="photo">摄影作品</button>
+        <button class="portfolio-filter-btn" data-filter="video">视频创作</button>
+        <button class="portfolio-filter-btn" data-filter="aigc">AIGC创作</button>
+        <button class="portfolio-filter-btn" data-filter="design">平面设计</button>
+      </div>
+
+      <div class="portfolio-grid reveal" style="transition-delay:.2s;">
+        <!-- Portfolio items - using actual portfolio images -->
+        <div class="portfolio-card" data-category="photo" onclick="openLightbox('portfolio_imgs/image53.jpeg', '纪实摄影作品')">
+          <img src="portfolio_imgs/image53.jpeg" alt="纪实摄影" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">摄影作品</div>
+            <div class="portfolio-card-title">纪实摄影系列</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="video" onclick="openLightbox('portfolio_imgs/image47.png', '纪录片作品')">
+          <img src="portfolio_imgs/image47.png" alt="纪录片" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">视频创作</div>
+            <div class="portfolio-card-title">《山城破浪：重庆冬泳队纪实》</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="design" onclick="openLightbox('portfolio_imgs/image49.png', '平面设计作品')">
+          <img src="portfolio_imgs/image49.png" alt="平面设计" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">平面设计</div>
+            <div class="portfolio-card-title">品牌视觉设计</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="aigc" onclick="openLightbox('portfolio_imgs/image48.png', 'AIGC作品')">
+          <img src="portfolio_imgs/image48.png" alt="AIGC" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">AIGC创作</div>
+            <div class="portfolio-card-title">AI生成广告片</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="video" onclick="openLightbox('portfolio_imgs/image52.jpeg', '视频创作')">
+          <img src="portfolio_imgs/image52.jpeg" alt="视频创作" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">视频创作</div>
+            <div class="portfolio-card-title">短片创作</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="photo" onclick="openLightbox('portfolio_imgs/image31.png', '摄影作品')">
+          <img src="portfolio_imgs/image31.png" alt="摄影作品" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">摄影作品</div>
+            <div class="portfolio-card-title">人像摄影</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="design" onclick="openLightbox('portfolio_imgs/image27.png', '平面设计')">
+          <img src="portfolio_imgs/image27.png" alt="平面设计" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">平面设计</div>
+            <div class="portfolio-card-title">海报设计</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="aigc" onclick="openLightbox('portfolio_imgs/image32.png', 'AIGC作品')">
+          <img src="portfolio_imgs/image32.png" alt="AIGC" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">AIGC创作</div>
+            <div class="portfolio-card-title">AI创意图像</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="video" onclick="openLightbox('portfolio_imgs/image72.png', '视频创作')">
+          <img src="portfolio_imgs/image72.png" alt="视频创作" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">视频创作</div>
+            <div class="portfolio-card-title">新闻短片</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="photo" onclick="openLightbox('portfolio_imgs/image46.png', '摄影作品')">
+          <img src="portfolio_imgs/image46.png" alt="摄影作品" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">摄影作品</div>
+            <div class="portfolio-card-title">风光摄影</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="design" onclick="openLightbox('portfolio_imgs/image89.png', '平面设计')">
+          <img src="portfolio_imgs/image89.png" alt="平面设计" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">平面设计</div>
+            <div class="portfolio-card-title">视觉识别设计</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="aigc" onclick="openLightbox('portfolio_imgs/image55.png', 'AIGC作品')">
+          <img src="portfolio_imgs/image55.png" alt="AIGC" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">AIGC创作</div>
+            <div class="portfolio-card-title">AI视频静帧</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="video" onclick="openLightbox('portfolio_imgs/image17.jpeg', '视频创作')">
+          <img src="portfolio_imgs/image17.jpeg" alt="视频创作" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">视频创作</div>
+            <div class="portfolio-card-title">短视频作品</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="photo" onclick="openLightbox('portfolio_imgs/image21.jpeg', '摄影作品')">
+          <img src="portfolio_imgs/image21.jpeg" alt="摄影作品" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">摄影作品</div>
+            <div class="portfolio-card-title">街头摄影</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="design" onclick="openLightbox('portfolio_imgs/image76.png', '平面设计')">
+          <img src="portfolio_imgs/image76.png" alt="平面设计" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">平面设计</div>
+            <div class="portfolio-card-title">排版设计</div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="aigc" onclick="openLightbox('portfolio_imgs/image77.png', 'AIGC作品')">
+          <img src="portfolio_imgs/image77.png" alt="AIGC" loading="lazy" />
+          <div class="portfolio-card-overlay">
+            <div class="portfolio-card-tag">AIGC创作</div>
+            <div class="portfolio-card-title">概念视觉设计</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
 
   <!-- ========================= AWARDS ========================= -->
   <section id="awards">
@@ -1719,12 +2181,12 @@
           <g transform="translate(30,30)">
             <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#e5619e" transform="rotate(0)"/>
             <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#e5619e" transform="rotate(45)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFCEE4" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFCEE4" transform="Rotate(90)"/>
             <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFCEE4" transform="rotate(135)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#e5619e" transform="rotate(180)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#e5619e" transform="rotate(225)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFCEE4" transform="rotate(270)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFCEE4" transform="rotate(315)"/>
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#e5619e" transform="Rotate(180)"/>
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#e5619e" transform="Rotate(225)"/>
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFCEE4" transform="Rotate(270)"/>
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#FFCEE4" transform="Rotate(315)"/>
             <circle cx="0" cy="0" r="5" fill="#fff"/>
           </g>
         </svg>
@@ -1734,11 +2196,11 @@
         <svg width="28" height="28" viewBox="0 0 60 60" fill="none">
           <g transform="translate(30,30)">
             <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#D01257" transform="rotate(0)"/>
-            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#D01257" transform="rotate(60)"/>
-            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#e5619e" transform="rotate(120)"/>
-            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#e5619e" transform="rotate(180)"/>
-            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#D01257" transform="rotate(240)"/>
-            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#D01257" transform="rotate(300)"/>
+            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#D01257" transform="Rotate(60)"/>
+            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#e5619e" transform="Rotate(120)"/>
+            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#e5619e" transform="Rotate(180)"/>
+            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#D01257" transform="Rotate(240)"/>
+            <ellipse cx="0" cy="-12" rx="6" ry="10" fill="#D01257" transform="Rotate(300)"/>
             <circle cx="0" cy="0" r="4" fill="#fff"/>
           </g>
         </svg>
@@ -1796,6 +2258,62 @@
           a.style.color = 'var(--deep-pink)';
         }
       });
+    });
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        portfolioCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.4s, transform 0.4s';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    function openLightbox(src, caption) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close lightbox on backdrop click
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeLightbox();
+    });
+
+    // Close lightbox on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
