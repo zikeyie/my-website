@@ -1952,37 +1952,52 @@
                             个人作品集
                         </h2>
                         <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto 40px;">
-                            新闻传播学作品精选 · 推文报道 · 图音视频 · 策划运营
+                            新闻传播学作品精选 · 个人介绍 · 策划运营 · 图音视频 · 推文报道
                         </p>
                         <!-- 分类标签 -->
                         <div class="portfolio-filters" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 50px;">
                             <button class="filter-btn active" data-filter="all" style="padding: 12px 30px; border: none; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); transition: all 0.3s ease;">全部作品</button>
-                            <button class="filter-btn" data-filter="articles" style="padding: 12px 30px; border: none; background: white; color: #667eea; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">📝 推文报道</button>
-                            <button class="filter-btn" data-filter="media" style="padding: 12px 30px; border: none; background: white; color: #667eea; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">🎬 图音视频</button>
+                            <button class="filter-btn" data-filter="intro" style="padding: 12px 30px; border: none; background: white; color: #667eea; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">👤 个人介绍</button>
                             <button class="filter-btn" data-filter="operations" style="padding: 12px 30px; border: none; background: white; color: #667eea; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">📈 策划运营</button>
+                            <button class="filter-btn" data-filter="media" style="padding: 12px 30px; border: none; background: white; color: #667eea; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">🎬 图音视频</button>
+                            <button class="filter-btn" data-filter="articles" style="padding: 12px 30px; border: none; background: white; color: #667eea; border-radius: 50px; cursor: pointer; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;">📝 推文报道</button>
                         </div>
                     </div>
 
                     <!-- 作品集网格 -->
                     <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px;">
-                        <!-- 推文报道类 (Pages 7-13) -->
-                        <div class="portfolio-item" data-category="articles" data-aos="fade-up" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
-                            <div onclick="openSlider(6)" style="position: relative; overflow: hidden;">
-                                <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_07.jpg" alt="推文报道" style="width: 100%; height: 250px; object-fit: cover; transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                        <!-- 个人介绍 (Pages 1-7) -->
+                        <div class="portfolio-item" data-category="intro" data-aos="fade-up" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                            <div onclick="openSlider(2)" style="position: relative; overflow: hidden;">
+                                <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_04.jpg" alt="个人介绍" style="width: 100%; height: 250px; object-fit: cover; transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
                                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%); opacity: 0; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0';">
                                     <span style="color: white; font-size: 1.2rem; font-weight: 600;">点击查看 →</span>
                                 </div>
                             </div>
                             <div style="padding: 25px;">
-                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #333; margin-bottom: 10px;">📝 推文报道</h3>
-                                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">新闻稿件 · 通讯稿 · 公众号推文 · 小说剧本 · 研究报告</p>
+                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #333; margin-bottom: 10px;">👤 个人介绍</h3>
+                                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">教育背景 · 专业技能 · 荣誉奖项 · 相关课程</p>
                             </div>
                         </div>
 
-                        <!-- 图音视频类 (Pages 14-20) -->
-                        <div class="portfolio-item" data-category="media" data-aos="fade-up" data-aos-delay="100" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                        <!-- 策划运营类 (Pages 8-14) -->
+                        <div class="portfolio-item" data-category="operations" data-aos="fade-up" data-aos-delay="100" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                            <div onclick="openSlider(7)" style="position: relative; overflow: hidden;">
+                                <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_09.jpg" alt="策划运营" style="width: 100%; height: 250px; object-fit: cover; transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%); opacity: 0; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0';">
+                                    <span style="color: white; font-size: 1.2rem; font-weight: 600;">点击查看 →</span>
+                                </div>
+                            </div>
+                            <div style="padding: 25px;">
+                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #333; margin-bottom: 10px;">📈 策划运营</h3>
+                                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">百度文库&amp;网盘矩阵账号 · 视频号/小红书/抖音 · 营销策划案例</p>
+                            </div>
+                        </div>
+
+                        <!-- 图音视频类 (Pages 15-21) -->
+                        <div class="portfolio-item" data-category="media" data-aos="fade-up" data-aos-delay="200" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
                             <div onclick="openSlider(14)" style="position: relative; overflow: hidden;">
-                                <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_15.jpg" alt="图音视频" style="width: 100%; height: 250px; object-fit: cover; transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                                <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_16.jpg" alt="图音视频" style="width: 100%; height: 250px; object-fit: cover; transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
                                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%); opacity: 0; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0';">
                                     <span style="color: white; font-size: 1.2rem; font-weight: 600;">点击查看 →</span>
                                 </div>
@@ -1993,25 +2008,76 @@
                             </div>
                         </div>
 
-                        <!-- 策划运营类 (Pages 21-24) -->
-                        <div class="portfolio-item" data-category="operations" data-aos="fade-up" data-aos-delay="200" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
+                        <!-- 推文报道类 (Pages 22-29) -->
+                        <div class="portfolio-item" data-category="articles" data-aos="fade-up" data-aos-delay="300" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';">
                             <div onclick="openSlider(21)" style="position: relative; overflow: hidden;">
-                                <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_22.jpg" alt="策划运营" style="width: 100%; height: 250px; object-fit: cover; transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
+                                <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_24.jpg" alt="推文报道" style="width: 100%; height: 250px; object-fit: cover; transition: all 0.4s ease;" onmouseover="this.style.transform='scale(1.1)';" onmouseout="this.style.transform='scale(1)';">
                                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%); opacity: 0; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.opacity='1';" onmouseout="this.style.opacity='0';">
                                     <span style="color: white; font-size: 1.2rem; font-weight: 600;">点击查看 →</span>
                                 </div>
                             </div>
                             <div style="padding: 25px;">
-                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #333; margin-bottom: 10px;">📈 策划运营</h3>
-                                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">账号运营数据 · 营销策划案例 · 从0到1搭建</p>
+                                <h3 style="font-size: 1.3rem; font-weight: 700; color: #333; margin-bottom: 10px;">📝 推文报道</h3>
+                                <p style="color: #666; font-size: 0.95rem; line-height: 1.6;">新闻稿件 · 报刊排版 · 公众号推文 · 小说剧本 · 研究报告</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- ============ 精选专栏：百度文库&网盘矩阵账号 ============ -->
+                    <div data-aos="fade-up" class="highlight-column" style="margin-bottom: 60px; background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 50%, #16213e 100%); border-radius: 28px; padding: 48px; box-shadow: 0 25px 70px rgba(0,0,0,0.28); position: relative; overflow: hidden;">
+                        <!-- 装饰光斑 -->
+                        <div style="position: absolute; top: -90px; right: -70px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(102,126,234,0.45) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+                        <div style="position: absolute; bottom: -110px; left: -60px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(118,75,162,0.4) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+                        <div class="highlight-column-inner" style="display: grid; grid-template-columns: 1fr 1.35fr; gap: 45px; align-items: center; position: relative; z-index: 2;">
+                            <!-- 左：文字介绍 -->
+                            <div>
+                                <div style="display: inline-block; padding: 6px 16px; border-radius: 50px; background: rgba(102,126,234,0.25); border: 1px solid rgba(150,170,255,0.45); color: #a8b8ff; font-size: 0.82rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 18px;">✨ 精选专栏 · FEATURED</div>
+                                <h3 style="font-size: 1.9rem; font-weight: 800; color: #fff; line-height: 1.35; margin-bottom: 18px;">百度文库 &amp; 网盘<br><span style="background: linear-gradient(135deg, #8ea2ff 0%, #c99cff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">矩阵账号运营</span></h3>
+                                <p style="color: rgba(255,255,255,0.75); font-size: 0.98rem; line-height: 1.9; margin-bottom: 24px;">
+                                    从 0 到 1 独立搭建 AIGC 账号矩阵，负责百度文库、百度网盘所属官号、真人演绎剧情号与 AIGC 账号的内容策划、创意产出与运营全流程。
+                                </p>
+                                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px;">
+                                    <span style="padding: 7px 15px; border-radius: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #dbe3ff; font-size: 0.82rem;">单月涨粉 5W+</span>
+                                    <span style="padding: 7px 15px; border-radius: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #dbe3ff; font-size: 0.82rem;">单月播放 1600W+</span>
+                                    <span style="padding: 7px 15px; border-radius: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #dbe3ff; font-size: 0.82rem;">心智词传播 1亿+</span>
+                                    <span style="padding: 7px 15px; border-radius: 50px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #dbe3ff; font-size: 0.82rem;">百万爆款 2 条</span>
+                                </div>
+                                <button onclick="openSlider(8)" style="padding: 15px 36px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; box-shadow: 0 10px 35px rgba(102,126,234,0.5); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 16px 45px rgba(102,126,234,0.7)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 35px rgba(102,126,234,0.5)';">查看这 3 页作品 →</button>
+                            </div>
+
+                            <!-- 右：3 页缩略图 -->
+                            <div class="highlight-thumbs" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                                <div onclick="openSlider(8)" style="position: relative; border-radius: 14px; overflow: hidden; cursor: pointer; box-shadow: 0 12px 30px rgba(0,0,0,0.4); transition: all 0.35s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.03)';" onmouseout="this.style.transform='translateY(0) scale(1)';">
+                                    <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_09.jpg" alt="百度文库&网盘矩阵账号 P1" style="width: 100%; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 8px; background: linear-gradient(transparent, rgba(0,0,0,0.75)); color: #fff; font-size: 0.78rem; text-align: center; font-weight: 600;">P1 · 矩阵总览</div>
+                                </div>
+                                <div onclick="openSlider(9)" style="position: relative; border-radius: 14px; overflow: hidden; cursor: pointer; box-shadow: 0 12px 30px rgba(0,0,0,0.4); transition: all 0.35s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.03)';" onmouseout="this.style.transform='translateY(0) scale(1)';">
+                                    <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_10.jpg" alt="百度文库&网盘矩阵账号 P2" style="width: 100%; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 8px; background: linear-gradient(transparent, rgba(0,0,0,0.75)); color: #fff; font-size: 0.78rem; text-align: center; font-weight: 600;">P2 · AIGC 全流程</div>
+                                </div>
+                                <div onclick="openSlider(10)" style="position: relative; border-radius: 14px; overflow: hidden; cursor: pointer; box-shadow: 0 12px 30px rgba(0,0,0,0.4); transition: all 0.35s ease;" onmouseover="this.style.transform='translateY(-8px) scale(1.03)';" onmouseout="this.style.transform='translateY(0) scale(1)';">
+                                    <img src="https://zikeyie.github.io/my-website/portfolio_pdfs/page_11.jpg" alt="百度文库&网盘矩阵账号 P3" style="width: 100%; display: block;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 8px; background: linear-gradient(transparent, rgba(0,0,0,0.75)); color: #fff; font-size: 0.78rem; text-align: center; font-weight: 600;">P3 · 爆款数据</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        @media (max-width: 900px) {
+                            .highlight-column-inner { grid-template-columns: 1fr !important; }
+                            .highlight-column { padding: 32px !important; }
+                        }
+                        @media (max-width: 560px) {
+                            .highlight-thumbs { grid-template-columns: 1fr !important; }
+                        }
+                    </style>
+
                     <!-- 查看完整作品集按钮 -->
                     <div data-aos="fade-up" style="text-align: center;">
                         <button onclick="openSlider(0)" style="padding: 18px 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 50px rgba(102, 126, 234, 0.6)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(102, 126, 234, 0.4)';">
-                            🎯 查看完整作品集 (26页)
+                            🎯 查看完整作品集 (30页)
                         </button>
                     </div>
                 </div>
@@ -2033,7 +2099,7 @@
 
                         <!-- 页码指示器 -->
                         <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); color: white; font-size: 1.1rem; background: rgba(0,0,0,0.5); padding: 10px 25px; border-radius: 50px; backdrop-filter: blur(10px);">
-                            <span id="slider-page">1</span> / <span id="slider-total">26</span>
+                            <span id="slider-page">1</span> / <span id="slider-total">30</span>
                         </div>
 
                         <!-- 缩略图导航 -->
@@ -2045,7 +2111,7 @@
 
                 <script>
                     let currentSlide = 0;
-                    const totalSlides = 26;
+                    const totalSlides = 30;
                     let sliderVisible = false;
 
                     function openSlider(startPage) {
